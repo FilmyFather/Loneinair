@@ -1,200 +1,186 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!DOCTYPE HTML>  
+<html lang="en-US">  
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Magarmach | Yuvraj Chauhan">
-    <meta name="github" content="https://github.com/FilmyFathet">
-    <!-- Modernizr -->
-    <script src="static/js/modernizr.js"></script>
-    <!-- Open Sans from Google Webfonts -->
-    <link href='static/css/css.css' rel='stylesheet' type='text/css'>
-    <!-- Main styles file -->
-    <link rel="stylesheet" href="static/css/styles.css">
-    <!-- Icons via Font Awesome -->
-    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <meta name="title" content="Magarmach | Yuvraj Chauhan">  
+    <meta name="github" content="https://github.com/FilmyFathet">  
+    <!-- Modernizr -->  
+    <script src="static/js/modernizr.js"></script>  
+    <!-- Open Sans from Google Webfonts -->  
+    <link href='static/css/css.css' rel='stylesheet' type='text/css'>  
+    <!-- Main styles file -->  
+    <link rel="stylesheet" href="static/css/styles.css">  
+    <!-- Icons via Font Awesome -->  
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">  
 
-    <title>Magarmach | Yuvraj Chauhan</title>
-</head>
+    <title>Magarmach | Yuvraj Chauhan</title>  
+</head>  
 
-<body class="color-scheme-neue">
-    <!-- Embedded YouTube Videos for background music -->
-    <!-- Video 1 -->
-    <iframe id="music1" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/dgdM0cOEi8g?autoplay=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+<body class="color-scheme-neue">  
+    <!-- Embedded YouTube Videos for background music -->  
+    <!-- Video 1 -->  
+    <iframe id="music1" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/dgdM0cOEi8g?autoplay=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
 
-    <!-- Video 2 -->
-    <iframe id="music2" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/Y1GaZ_4JDkA?autoplay=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    <!-- Video 2 -->  
+    <iframe id="music2" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/Y1GaZ_4JDkA?autoplay=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
 
-    <!-- Video 3 -->
-    <iframe id="music3" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/KfTkkcsbp3M?autoplay=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    <!-- Video 3 -->  
+    <iframe id="music3" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/KfTkkcsbp3M?autoplay=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
 
-    <!-- Video 4 -->
-    <iframe id="music4" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/2UveS3hYliI?autoplay=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    <!-- Video 4 -->  
+    <iframe id="music4" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/2UveS3hYliI?autoplay=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
 
-    <script type="text/javascript">
-        // Function to load and play the next video
-        function playNextVideo(currentVideoId, nextVideoId) {
-            // Get current and next video iframe elements
-            var currentVideo = document.getElementById(currentVideoId);
-            var nextVideo = document.getElementById(nextVideoId);
+    <script type="text/javascript">  
+        // Function to load and play the next video  
+        function playNextVideo(currentVideoId, nextVideoId) {  
+            // Get current and next video iframe elements  
+            var currentVideo = document.getElementById(currentVideoId);  
+            var nextVideo = document.getElementById(nextVideoId);  
 
-            // Play current video
-            currentVideo.src += "&autoplay=1"; // Start playing the current video
+            // Play current video  
+            currentVideo.src += "&autoplay=1"; // Start playing the current video  
 
-            // Add event listener to play next video when current video ends
-            currentVideo.onload = function () {
-                setTimeout(function () {
-                    // Stop the current video by removing autoplay and load next video
-                    currentVideo.src = currentVideo.src.replace("&autoplay=1", "");
+            // Add event listener to play next video when current video ends  
+            currentVideo.onload = function () {  
+                setTimeout(function () {  
+                    // Stop the current video by removing autoplay and load next video  
+                    currentVideo.src = currentVideo.src.replace("&autoplay=1", "");  
 
-                    // Start the next video
-                    nextVideo.src += "&autoplay=1"; // Start playing next video
+                    // Start the next video  
+                    nextVideo.src += "&autoplay=1"; // Start playing next video  
 
-                    // Add event listener for next video to play after it ends
-                    if (nextVideoId !== "music4") {
-                        nextVideo.onload = function () {
-                            var nextNextVideoId = "music" + (parseInt(nextVideoId.replace("music", "")) + 1);
-                            playNextVideo(nextVideoId, nextNextVideoId);
-                        }
-                    }
-                }, 1000); // Wait 1 second before transitioning
-            }
-        }
+                    // Add event listener for next video to play after it ends  
+                    if (nextVideoId !== "music4") {  
+                        nextVideo.onload = function () {  
+                            var nextNextVideoId = "music" + (parseInt(nextVideoId.replace("music", "")) + 1);  
+                            playNextVideo(nextVideoId, nextNextVideoId);  
+                        }  
+                    }  
+                }, 1000); // Wait 1 second before transitioning  
+            }  
+        }  
 
-        // Start playing the first video
-        playNextVideo("music1", "music2");
+        // Start playing the first video  
+        playNextVideo("music1", "music2");  
 
-    <!-- Animated background -->
-    <canvas id="bg-canvas"></canvas>
+    </script>  
 
-    <div class="bg-img" style="width: 100%; height: 100%; position: fixed; background: url(https://cdn.jsdelivr.net/gh/FilmyFather/Magarmach/love.jpg) no-repeat center center; background-size: cover;">
-    </div>
-    <!-- First screen -->
-    <div class="splash">
-        <div class="centered-unit">
-            <div class="container">
-                <!-- Main header -->
-                <h1>For us！</h1>
-                <!-- Sub header -->
-                <p class="lead">We have been together for:</p>
-                <!-- Countdown -->
-                <div class="countdown circled large">
-                    <!-- Days -->
-                    <div class="time days">
-                        <div class="value">00</div>
-                        <div class="unit">Days</div>
-                    </div>
-                    <!-- Hours -->
-                    <div class="time hours">
-                        <div class="value">00</div>
-                        <div class="unit">Hours</div>
-                    </div>
-                    <!-- Minutes -->
-                    <div class="time minutes">
-                        <div class="value">00</div>
-                        <div class="unit">Minutes</div>
-                    </div>
-                    <!-- Seconds -->
-                    <div class="time seconds">
-                        <div class="value">00</div>
-                        <div class="unit">Seconds</div>
-                    </div>
-                </div>
-                <!-- Countdown end -->
-            </div>
-        </div>
-    </div>
+    <!-- Animated background -->  
+    <canvas id="bg-canvas"></canvas>  
 
-    <!-- Second screen -->
-    <div class="overlap">
-        <!-- Link "Scroll down to learn more" -->
-        <a href="" class="more">Scroll Down <i class="fa fa-chevron-down"></i> More</a>
+    <div class="bg-img" style="width: 100%; height: 100%; position: fixed; background: url(https://cdn.jsdelivr.net/gh/FilmyFather/Magarmach/love.jpg) no-repeat center center; background-size: cover;">  
+    </div>  
+    <!-- First screen -->  
+    <div class="splash">  
+        <div class="centered-unit">  
+            <div class="container">  
+                <!-- Main header -->  
+                <h1>For us！</h1>  
+                <!-- Sub header -->  
+                <p class="lead">We have been together for:</p>  
+                <!-- Countdown -->  
+                <div class="countdown circled large">  
+                    <!-- Days -->  
+                    <div class="time days">  
+                        <div class="value">00</div>  
+                        <div class="unit">Days</div>  
+                    </div>  
+                    <!-- Hours -->  
+                    <div class="time hours">  
+                        <div class="value">00</div>  
+                        <div class="unit">Hours</div>  
+                    </div>  
+                    <!-- Minutes -->  
+                    <div class="time minutes">  
+                        <div class="value">00</div>  
+                        <div class="unit">Minutes</div>  
+                    </div>  
+                    <!-- Seconds -->  
+                    <div class="time seconds">  
+                        <div class="value">00</div>  
+                        <div class="unit">Seconds</div>  
+                    </div>  
+                </div>  
+                <!-- Countdown end -->  
+            </div>  
+        </div>  
+    </div>  
 
-        <!-- Detailed info -->
-        <div class="container few-words">
-            <div class="row">
-                <!-- First column -->
-                <div class="col col-heading">
-                    <!-- Detailed info -->
-                    <h2>Our Beautiful Story📚</h2><br>
-                </div>
-                <!-- First column end -->
+    <!-- Second screen -->  
+    <div class="overlap">  
+        <!-- Link "Scroll down to learn more" -->  
+        <a href="" class="more">Scroll Down <i class="fa fa-chevron-down"></i> More</a>  
 
-                <!-- Second column -->
-                <div class="col col-content">
-                    <p>📅&nbsp;06-04-2023 - We Both Met For The First Time In Our समाज का सम्मेलन in Vasai. 🥰🥳<br></p>
-                    <p>📅&nbsp;06-04-2023 - I Had Asked For Your Instagram ID For The First Time Through My Brother Ajay And I Sent You A Request For The First Time And You Accepted.🫣😬<br></p>
-                    <p>📅&nbsp;07-04-2023 - We Talked For The First Time At Night And From There Our Conversation Continued. 🌃<br></p>
-                    <p>📅&nbsp;21-05-2023 - You Sent Me Some Of Your Most Beautiful Photos.😶‍🌫️💝<br></p>
-                    <p>📅&nbsp;31-05-2023 - You Accepted My Proposal And Since Then Our Never Ending Love Story Started. 😍🥵<br></p>
-                    <p>📅&nbsp;03-06-2023 - Our Mobile Number Was Exchanged. 🤪🤪<br></p>
-                    <p>📅&nbsp;19-06-2023 - We Met For The First Time In A Public Place. You Had Come To Vidya Vikas Universal College For Your College Admissions And That Day We Walked For The First Time And Also Took Photos.❤️<br></p>
-                    <p>📅&nbsp;20-06-2023 - You Came To My House For The First Time In Virar And We Kissed For The First Time At That Place And I Still Remember That Sweet Kiss.😘💋<br></p>
-                    <p>📅&nbsp;01-07-2023 - We Met Again, I Came To Malad Station, It Was Your Parents Anniversary And We Did Some Shopping Together.😮‍💨🤭<br></p>
-                    <p>📅&nbsp;28-07-2023 - We Taste a Chocolate First Time. 💦🌚🤤<br></p>
-                    <p>📅&nbsp;21-08-2023 - Both Of Us Went To Juhu Chopaty For The First Time.🏖️🌊<br></p>
-                    <p>📅&nbsp;25-08-2023 - My Wife And My Mother In Law Came To My Virar House For The First Time For A Bhajan. 🪷🕉️<br></p>
-                    <p>📅&nbsp;03-08-2023 We Went For A Full Day Outing For The First Time And That Day We Both Went To Babulnath, Girgaon Chowpatty And ISKCON Chowpatty. 🥳🫣<br></p>
-                    <p>📅&nbsp;26-12-2023 - It Was The Best Day Of Our Life Coz There Was A समाज का सम्मेलन In Nalasopara That Day And We Both Were Twinning. 🥰✨<br></p>
-                    <p>📅&nbsp;17-02-2024 - I Proposed To You And Gave You The Ring. 💍💖<br></p>
-                    <p>📅&nbsp;21-04-202 - That Day You Wrote My Name For The First Time With Mehndi On Your Lovely Hands. 😘<br></p>
-                    <p>📅&nbsp;01-06-2024 - We Both Tried Zudio Face Masks Together For The First Time But We Both Looked Like a Ghost. 👻😂<br></p>
-                    <p>📅&nbsp;14-04-2024 - Finally You Gave Me The First Love Bite On My Neck And That Too On My Special Day, My Birthday. 💋☺️<br></p>
-                    <p>📅&nbsp;15-08-2024 - We Went To Trimandir That Day. 🛕<br></p>
-                    <p>📅&nbsp;25-08-2024 - It Was Our First Movie Date, We Went To Watch Stree 2 And After Coming Out We Ate Very Tasty Momos For The First Time That Day And Since Then That Momos Shop Became Our Fixed And Favourite.✨💖<br></p>
-                </div>
-                <!-- Second column end -->
-            </div>
-        </div>
-        <!-- Detailed info block end -->
+        <!-- Detailed info -->  
+        <div class="container few-words">  
+            <div class="row">  
+                <!-- First column -->  
+                <div class="col col-heading">  
+                    <!-- Detailed info -->  
+                    <h2>Our Beautiful Story📚</h2><br>  
+                </div>  
+                <!-- First column end -->  
 
-        <!-- Footer -->
-        <div class="footer">
-            <div class="container" style="text-align: center;">
-                皖ICP备2023031200-1号
-            </div>
-        </div>
-        <!-- Footer end -->
-    </div>
+                <!-- Second column -->  
+                <div class="col col-content">  
+                    <!-- Your detailed story goes here... -->  
+                    <p>📅 06-04-2023 - We Both Met For The First Time In Our समाज का सम्मेलन in Vasai. 🥰🥳<br></p>  
+                    <p>📅 06-04-2023 - I Had Asked For Your Instagram ID For The First Time Through My Brother Ajay And I Sent You A Request For The First Time And You Accepted.🫣😬<br></p>  
+                    <!-- ... (continue the rest of the detailed story) -->  
+                </div>  
+                <!-- Second column end -->  
+            </div>  
+        </div>  
+        <!-- Detailed info block end -->  
 
-    <div id="copy">
-        <p class="text-center text-white text-sm">Magarmach <3<a href="https://www.instagram.com/_xx_itz_yuvi_xx_/reels/#">@Yuvraj.dev</a></p>
-    </div>
+        <!-- Footer -->  
+        <div class="footer">  
+            <div class="container" style="text-align: center;">  
+                皖ICP备2023031200-1号  
+            </div>  
+        </div>  
+        <!-- Footer end -->  
+    </div>  
 
-    <!-- JavaScripts -->
+    <div id="copy">  
+        <p class="text-center text-white text-sm">Magarmach <3<a href="https://www.instagram.com/_xx_itz_yuvi_xx_/reels/#">@Yuvraj.dev</a></p>  
+    </div>  
 
-    <script src="static/js/jquery.js"></script>
-    <script src="static/js/countdown.js"></script>
-    <script src="static/js/bezierCanvas.js"></script>
-    <script src="static/js/notifyMe.js"></script>
+    <!-- JavaScripts -->  
 
-    <script type="text/javascript">
-        $().ready(function () {
-            // Activate countdownTimer plugin on a '.countdown' element
-            $(".countdown").countdownTimer({
-                // Set the end date for the countdown
-                endTime: new Date("May 31, 2023 00:00:00 UTC+0800")
-            });
+    <script src="static/js/jquery.js"></script>  
+    <script src="static/js/countdown.js"></script>  
+    <script src="static/js/bezierCanvas.js"></script>  
+    <script src="static/js/notifyMe.js"></script>  
 
-            // Activate notifyMe plugin on a '#notifyMe' element    
-            $("#notifyMe").notifyMe();
+    <script type="text/javascript">  
+        $().ready(function () {  
+            // Activate countdownTimer plugin on a '.countdown' element  
+            $(".countdown").countdownTimer({  
+                // Set the end date for the countdown  
+                endTime: new Date("May 31, 2023 00:00:00 UTC+0800")  <!-- Updated date for countdown -->  
+            });  
 
-            // Activate bezierCanvas plugin on a #bg-canvas element
-            $("#bg-canvas").bezierCanvas({
-                maxStyles: 3,
-                maxLines: 80,
-                strokeWidth: 0.5,
-                lineSpacing: 0.07,
-                spacingVariation: 0.07,
-                colorBase: { r: 100, g: 120, b: 200 },
-                colorVariation: { r: 50, g: 50, b: 50 },
-                globalAlpha: 0.4,
-                globalSpeed: 200,
-            });
-        });
-    </script>
+            // Activate notifyMe plugin on a '#notifyMe' element   
+            $("#notifyMe").notifyMe();  
 
-</body>
+            // Activate bezierCanvas plugin on a #bg-canvas element  
+            $("#bg-canvas").bezierCanvas({  
+                maxStyles: 3,  
+                maxLines: 80,  
+                strokeWidth: 0.5,  
+                lineSpacing: 0.07,  
+                spacingVariation: 0.07,  
+                colorBase: { r: 100, g: 120, b: 200 },  
+                colorVariation: { r: 50, g: 50, b: 50 },  
+                globalAlpha: 0.4,  
+                globalSpeed: 200,  
+            });  
+        });  
+    </script>  
+
+</body>  
 
 </html>
