@@ -21,31 +21,34 @@
 <body class="color-scheme-neue">  
     <!-- Embedded YouTube Videos for background music -->  
     <!-- Video 1 -->  
-    <iframe id="music1" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/dgdM0cOEi8g?autoplay=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
+    <iframe id="music1" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" 
+        src="https://www.youtube.com/embed/dgdM0cOEi8g?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
 
     <!-- Video 2 -->  
-    <iframe id="music2" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/Y1GaZ_4JDkA?autoplay=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
+    <iframe id="music2" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" 
+        src="https://www.youtube.com/embed/Y1GaZ_4JDkA?autoplay=0&mute=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
 
     <!-- Video 3 -->  
-    <iframe id="music3" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/KfTkkcsbp3M?autoplay=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
+    <iframe id="music3" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" 
+        src="https://www.youtube.com/embed/KfTkkcsbp3M?autoplay=0&mute=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
 
     <!-- Video 4 -->  
-    <iframe id="music4" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" src="https://www.youtube.com/embed/2UveS3hYliI?autoplay=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
+    <iframe id="music4" width="1" height="1" style="position:absolute; top:0; left:0; z-index:-1;" 
+        src="https://www.youtube.com/embed/2UveS3hYliI?autoplay=0&mute=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>  
 
     <script type="text/javascript">  
         // Function to load and play the next video  
         function playNextVideo(currentVideoId, nextVideoId) {  
-            // Get current and next video iframe elements  
             var currentVideo = document.getElementById(currentVideoId);  
             var nextVideo = document.getElementById(nextVideoId);  
 
             // Play current video  
             currentVideo.src += "&autoplay=1"; // Start playing the current video  
 
-            // Add event listener to play next video when current video ends  
+            // Add event listener to play the next video when the current video ends  
             currentVideo.onload = function () {  
                 setTimeout(function () {  
-                    // Stop the current video by removing autoplay and load next video  
+                    // Stop the current video by removing autoplay  
                     currentVideo.src = currentVideo.src.replace("&autoplay=1", "");  
 
                     // Start the next video  
@@ -64,7 +67,6 @@
 
         // Start playing the first video  
         playNextVideo("music1", "music2");  
-
     </script>  
 
     <!-- Animated background -->  
@@ -200,4 +202,4 @@
 
 </body>  
 
-</html>
+    </html>
